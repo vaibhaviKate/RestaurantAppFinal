@@ -35,6 +35,7 @@ public class ViewOrders extends AppCompatActivity {
     private RecyclerView.Adapter adapter;
      RecyclerView major_section;
      RecyclerView.Adapter major_adapter;
+     public Context context = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,7 +118,7 @@ public class ViewOrders extends AppCompatActivity {
                                                // Log.d("HEYNAME",""+name);
                                                 name.add(name1);
                                                 emailid.add(emailid1);
-                                                major_adapter=new User(name,majorlist, emailid);
+                                                major_adapter=new User(name,majorlist, emailid, context);
 
                                                 major_section.setAdapter(major_adapter);
                                                 major_adapter.notifyDataSetChanged();
