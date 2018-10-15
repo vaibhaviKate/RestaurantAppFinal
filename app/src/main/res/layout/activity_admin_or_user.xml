@@ -4,34 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFF00"
     tools:context=".AdminOrUser">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:layout_margin="20dp"
         >
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="@color/black"
             android:layout_gravity="center_horizontal"
-            android:text="SELECT USER TYPE"/>
+            android:text="SELECT USER TYPE"
+            android:gravity="center_horizontal"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:padding="20dp"
+            android:textColor="@color/white"
+            android:layout_margin="15dp"
             android:id="@+id/user"
             android:text="USER"
+            android:background="#ff0000"
             />
         <Button
             android:layout_width="match_parent"
             android:layout_height="70dp"
+            android:textColor="@color/white"
             android:padding="20dp"
             android:id="@+id/admin"
+            android:layout_margin="15dp"
             android:text="ADMIN"
+            android:background="#ff0000"
             />
         <Button
             android:layout_width="match_parent"
             android:layout_height="70dp"
+            android:textColor="@color/white"
+            android:layout_margin="15dp"
+            android:background="#ff0000"
             android:text="Restaurant Manager"
             android:id="@+id/restaurantmanager"/>
     </LinearLayout>

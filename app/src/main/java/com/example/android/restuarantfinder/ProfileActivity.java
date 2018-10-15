@@ -30,6 +30,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         buttonLogout = (Button) findViewById(R.id.buttonLogout);
         editEmailAddress=(EditText)findViewById( R.id.editEmailAddress);
         textViewUserEmail = (TextView) findViewById(R.id.textViewUserEmail);
+
         firebaseAuth = FirebaseAuth.getInstance();
         if (firebaseAuth.getCurrentUser() == null)
         {
@@ -81,9 +82,18 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         }
 
         if(view == buttonSave)
-        {
-            saveUserInformation();
-            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+        {          String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+                String email=editEmailAddress.getText().toString();
+            if (!(email.matches(emailPattern) && email.length() > 0))
+            {
+                Toast.makeText(getApplicationContext(),"Invalid email address",Toast.LENGTH_SHORT).show();
+                editEmailAddress.setText("");
+            }
+            else
+            {
+                saveUserInformation();
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            }
 
         }
     }

@@ -13,12 +13,14 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@color/background_color">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="item"
+                android:textColor="@color/white"
                 android:layout_alignParentLeft="true"
                 android:padding="15dp"
                 android:id="@+id/cartItemName"/>
@@ -27,6 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="price"
+                android:textColor="@color/white"
                 android:layout_alignParentLeft="true"
                 android:layout_below="@+id/cartItemName"
                 android:padding="15dp"
@@ -34,6 +37,7 @@
             <Button
                 android:id="@+id/buttonIncrease"
                 android:layout_width="35dp"
+                android:background="@color/white"
                 android:layout_height="35dp"
                 android:text="+"
                 android:layout_alignParentRight="true"
@@ -47,6 +51,7 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:text="-"
+                android:background="@color/white"
                 android:layout_toLeftOf="@+id/count"
                 android:layout_marginTop="25dp"
                 android:layout_marginRight="15dp"
@@ -58,6 +63,7 @@
                 android:text="0"
                 android:layout_toLeftOf="@+id/buttonIncrease"
                 android:id="@+id/count"
+                android:textColor="@color/white"
                 android:layout_marginTop="36dp"
                 android:layout_marginRight="15dp"
                 />
@@ -68,6 +74,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="35dp"
+                android:textColor="@color/white"
                 android:layout_marginTop="25dp"/>
 
         </RelativeLayout>

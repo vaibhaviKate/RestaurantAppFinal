@@ -9,7 +9,8 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@color/background_color">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -17,11 +18,13 @@
                 android:id="@+id/manager_itemname"
                 android:layout_alignParentLeft="true"
                 android:text="item1"
+                android:textColor="@color/white"
                 android:padding="25dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
                 android:id="@+id/manager_itemprice"
                 android:layout_toRightOf="@id/manager_itemname"
                 android:text="item2"
@@ -30,6 +33,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
                 android:id="@+id/manager_itemquant"
                 android:layout_toRightOf="@id/manager_itemprice"
                 android:text="item2"
@@ -41,6 +45,7 @@
                 android:id="@+id/itemtotalprice"
                 android:layout_toRightOf="@id/manager_itemquant"
                 android:text="item2"
+                android:textColor="@color/white"
                 android:padding="25dp"/>
 
 

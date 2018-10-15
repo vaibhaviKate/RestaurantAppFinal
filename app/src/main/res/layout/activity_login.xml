@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    android:background="@color/background_color"
+    >
 
 
     <LinearLayout
@@ -12,20 +14,25 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
 
+
         >
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="User Login"
-            android:textSize="50dp"
-            android:layout_margin="10dp"
+            android:textColor="@color/white_greyish"
+            android:text="USER LOGIN"
+            android:textSize="35dp"
+            android:layout_margin="20dp"
             android:textAlignment="center"
             />
 
         <EditText
             android:layout_margin="15dp"
             android:id="@+id/editTextEmail"
+            android:background="@android:color/transparent"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="useremail"
@@ -36,16 +43,20 @@
         <EditText
             android:layout_margin="15dp"
             android:id="@+id/editTextPassword"
+            android:background="@android:color/transparent"
             android:layout_width="match_parent"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:layout_height="wrap_content"
             android:hint="userpassword"
             android:inputType="textPassword"
             />
         <Button
-            android:layout_margin="15dp"
+            android:layout_margin="30dp"
             android:id="@+id/buttonSignIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/white"
             android:text="Sign In"
 
             />
@@ -53,7 +64,10 @@
             android:layout_margin="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Not registered!"
+            android:text="Not registered"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:textAlignment="center"
             android:id="@+id/textViewSignUp"
 

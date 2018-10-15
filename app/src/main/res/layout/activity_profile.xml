@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity">
+    tools:context=".ProfileActivity"
+    android:background="@color/background_color">
 
 
     <LinearLayout
@@ -16,6 +17,8 @@
             android:layout_height="wrap_content"
             android:hint="Enter name here"
             android:textSize="30dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:id="@+id/editTextName"
             />
 
@@ -24,6 +27,8 @@
             android:layout_height="wrap_content"
             android:hint="Enter address here"
             android:textSize="30dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:id="@+id/editTextAddress"
             />
         <EditText
@@ -31,12 +36,16 @@
             android:layout_height="wrap_content"
             android:hint="Enter email here"
             android:textSize="30dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:id="@+id/editEmailAddress"
             />
         <Button
             android:layout_width="100dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
             android:text="Save"
+            android:background="@color/white"
             android:layout_gravity="center_horizontal"
             android:id="@+id/buttonSave"
             />
@@ -47,10 +56,12 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:text="LoggedIn"
-
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:textAlignment="center" />
         <Button
             android:layout_margin="20dp"
+            android:background="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/buttonLogout"
@@ -60,6 +71,7 @@
             />
         <Button
             android:layout_margin="20dp"
+            android:background="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/letseat"
