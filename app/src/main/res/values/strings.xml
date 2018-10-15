@@ -1,0 +1,9 @@
+<resources>
+    <string name="google_aps_api">AIzaSyDtxUgD1RkY5yOjt3n7EpdFU4pBIcY0IUk</string>
+    <string name="app_name">RestuarantFinder</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_rest_details">RestDetails</string>
+    <string name="place_order">Place Order</string>
+    <string name="map">Map!</string>
+    <!--<item type="string" name="databaseVersion" format="integer">1</item>-->
+</resources>

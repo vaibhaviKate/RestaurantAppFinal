@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Mao">
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/mao"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:textColor="#000"
+            android:textSize="20sp"
+
+             />
+
+        <Button
+            android:id="@+id/placeOrderButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/maoImage"
+            android:text="Place Order"
+            android:layout_alignEnd="@+id/mao"
+            android:layout_marginRight="20dp"
+
+            tools:ignore="InvalidId" />
+
+        <ImageView
+            android:id="@+id/maoImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/mao"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/maorestaurant"
+            android:scaleType="fitXY"
+            android:clickable="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="150dp"
+            android:layout_below="@+id/mao"
+            android:layout_alignEnd="@+id/mao"
+            android:id="@+id/maoAdd"
+            android:text="address"/>
+        <Button
+            android:id="@+id/starter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/placeOrderButton"
+            android:layout_marginLeft="20dp"
+            android:text="Starters"/>
+        <Button
+            android:id="@+id/drinks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/placeOrderButton"
+            android:layout_toRightOf="@+id/starter"
+            android:text="drinks"/>
+
+        <android.support.v7.widget.RecyclerView
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+            android:layout_width="360dp"
+            android:id="@+id/review_recyclerview"
+            android:layout_height="207dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="18dp"
+            android:layout_marginStart="19dp" />
+
+        <Button
+            android:id="@+id/addreviewbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/placeOrderButton"
+            android:layout_marginEnd="61dp"
+            android:text="Add review" />
+
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
