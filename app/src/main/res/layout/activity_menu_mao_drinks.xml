@@ -10,16 +10,42 @@
         android:layout_height="match_parent"
         >
 
-        <ListView
-            android:id="@+id/listViewDrink"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <RelativeLayout
+            android:id="@+id/heading"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:background="#673AB7">
 
-            />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Item"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:layout_marginLeft="20dp"
+                android:layout_alignParentLeft="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:layout_marginRight="25dp"
+                android:layout_alignParentRight="true"/>
+
+        </RelativeLayout>
+
+
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:id="@+id/recyclerView"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/heading">
+
+        </android.support.v7.widget.RecyclerView>
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
-
-
-
-

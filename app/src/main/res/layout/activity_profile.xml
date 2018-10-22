@@ -5,40 +5,48 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProfileActivity"
-    android:background="@color/background_color">
+    android:background="@drawable/appbg">
 
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginTop="50dp">
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter name here"
-            android:textSize="30dp"
+            android:hint="   Enter name here"
+            android:textSize="30sp"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:id="@+id/editTextName"
+            android:background="@drawable/roundedtextfields"
             />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter address here"
-            android:textSize="30dp"
+            android:hint="   Enter address here"
+            android:textSize="30sp"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:id="@+id/editTextAddress"
+            android:background="@drawable/roundedtextfields"
+            android:layout_below="@+id/editTextName"
+            android:layout_marginTop="20dp"
             />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter email here"
-            android:textSize="30dp"
+            android:hint="   Enter email here"
+            android:textSize="30sp"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:id="@+id/editEmailAddress"
+            android:background="@drawable/roundedtextfields"
+            android:layout_below="@+id/editTextAddress"
+            android:layout_marginTop="20dp"
             />
         <Button
             android:layout_width="100dp"
@@ -48,6 +56,8 @@
             android:background="@color/white"
             android:layout_gravity="center_horizontal"
             android:id="@+id/buttonSave"
+            android:layout_below="@+id/editEmailAddress"
+            android:layout_centerHorizontal="true"
             />
 
         <TextView
@@ -58,31 +68,33 @@
             android:text="LoggedIn"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:layout_below="@+id/buttonSave"/>
         <Button
-            android:layout_margin="20dp"
+            android:layout_marginTop="15dp"
             android:background="@color/white"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:id="@+id/buttonLogout"
             android:text="Logout"
             android:textAlignment="center"
-
+            android:layout_below="@+id/textViewUserEmail"
+            android:layout_centerHorizontal="true"
             />
         <Button
-            android:layout_margin="20dp"
+            android:layout_marginTop="20dp"
             android:background="@color/white"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:id="@+id/letseat"
             android:text="LetsEat"
-            android:textAlignment="center"
-
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/buttonLogout"
             />
 
 
 
 
 
-    </LinearLayout>
+    </RelativeLayout>
 </RelativeLayout>

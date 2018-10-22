@@ -123,12 +123,12 @@ public class dataBaseAccess {
     }
     public void insertItem(String itemtype,String itemName,int itemPrice)
     {
-        String str = "INSERT INTO menuMao VALUES(?,?,?,?)";
+        String str = "INSERT INTO menuMao(itemType,itemName,itemPrice) VALUES(?,?,?)";
         SQLiteStatement stmt = db.compileStatement(str);
-        stmt.bindLong(1, itemNumber++);
-        stmt.bindString(2,itemtype);
-        stmt.bindString(3, itemName);
-        stmt.bindLong(4, itemPrice);
+        //stmt.bindLong(1, itemNumber++);
+        stmt.bindString(1,itemtype);
+        stmt.bindString(2, itemName);
+        stmt.bindLong(3, itemPrice);
         long i = stmt.executeInsert();
     }
     public void deleteItem(String itemName)

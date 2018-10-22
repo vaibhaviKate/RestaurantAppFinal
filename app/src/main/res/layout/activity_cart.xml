@@ -6,21 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".CartActivity">
 
-    <RelativeLayout android:background="#e1e1e1"
+    <RelativeLayout
         android:layout_height="fill_parent"
         android:layout_width="fill_parent"
-        xmlns:android="http://schemas.android.com/apk/res/android">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:background="@drawable/appbg">
         <LinearLayout
             android:id="@+id/layout_total"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:padding="5dp"
             android:weightSum="2"
-            android:background="@color/background_color">
+            >
             <TextView android:gravity="end"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textColor="@color/white"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:text="Total : "
                 android:textSize="20dp">
@@ -29,7 +31,8 @@
             <TextView
                 android:id="@+id/total"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:text="0 Rs"
@@ -40,7 +43,7 @@
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_cart"
-            android:background="@color/background_color"
+
             android:layout_above="@+id/submit_order"
             android:layout_below="@+id/layout_total"
             android:layout_height="match_parent"

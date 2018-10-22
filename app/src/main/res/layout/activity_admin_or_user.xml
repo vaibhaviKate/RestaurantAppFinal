@@ -4,22 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFF00"
+    android:background="@drawable/appbg"
     tools:context=".AdminOrUser">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_margin="20dp"
+        android:layout_marginTop="100dp"
         >
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:textColor="@color/black"
+            android:textSize="27dp"
+            android:textColor="#ffffff"
             android:layout_gravity="center_horizontal"
             android:text="SELECT USER TYPE"
-            android:gravity="center_horizontal"/>
+            android:gravity="center_horizontal"
+            android:textStyle="bold"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="70dp"
@@ -28,7 +29,7 @@
             android:layout_margin="15dp"
             android:id="@+id/user"
             android:text="USER"
-            android:background="#ff0000"
+            android:background="#4E342E"
             />
         <Button
             android:layout_width="match_parent"
@@ -38,14 +39,14 @@
             android:id="@+id/admin"
             android:layout_margin="15dp"
             android:text="ADMIN"
-            android:background="#ff0000"
+            android:background="#4E342E"
             />
         <Button
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:textColor="@color/white"
             android:layout_margin="15dp"
-            android:background="#ff0000"
+            android:background="#4E342E"
             android:text="Restaurant Manager"
             android:id="@+id/restaurantmanager"/>
     </LinearLayout>

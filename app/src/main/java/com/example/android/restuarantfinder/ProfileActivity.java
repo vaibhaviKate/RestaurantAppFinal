@@ -1,14 +1,18 @@
 package com.example.android.restuarantfinder;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -22,6 +26,8 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     private EditText editTextName,editTextAddress,editEmailAddress;
     private Button buttonSave;
     private Button letsEat;
+    private static final String TAG="ProfileActivity";
+    private static final int ERROR_DIALOG_REQUEST=9001;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +70,39 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         //startActivity(new Intent(this,RestaurantActivity1.class));
 
     }
+    public void init()
+    {
+
+        if(isServicesOk())
+        {
+
+            Intent intent=new Intent(ProfileActivity.this,MapsActivity.class);
+            startActivity(intent);
+
+        }
+
+    }
+    public boolean isServicesOk()
+    {
+        Log.d(TAG,"checking services");
+        int available= GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(ProfileActivity.this);
+        if(available== ConnectionResult.SUCCESS)
+        {
+            Log.d(TAG,"Everything fine");
+            return true;
+        }
+        else if(GoogleApiAvailability.getInstance().isUserResolvableError(available))
+        {
+            Log.d(TAG,"just smal error");
+            Dialog dialog=GoogleApiAvailability.getInstance().getErrorDialog(ProfileActivity.this,available,ERROR_DIALOG_REQUEST);
+            dialog.show();
+        }
+        else
+        {
+            Toast.makeText(this,"Cant proced",Toast.LENGTH_SHORT).show();
+        }
+        return false;
+    }
 
     @Override
     public void onClick(View view) {
@@ -76,17 +115,19 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         }
         if(view == letsEat)
         {
-            finish();
-            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+           init();
+
+            //finish();
+            //startActivity(new Intent(getApplicationContext(),MainActivity.class));
 
         }
 
         if(view == buttonSave)
         {          String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
                 String email=editEmailAddress.getText().toString();
-            if (!(email.matches(emailPattern) && email.length() > 0))
+            if (!(email.matches(emailPattern) && email.length() > 0 && editTextName.getText().toString().length()>0 && editTextAddress.getText().toString().length()>0 ) )
             {
-                Toast.makeText(getApplicationContext(),"Invalid email address",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Invalid details",Toast.LENGTH_SHORT).show();
                 editEmailAddress.setText("");
             }
             else

@@ -58,7 +58,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-       // editText1=(EditText)findViewById(R.id.input_search);
+        // editText1=(EditText)findViewById(R.id.input_search);
 
         init();
 
@@ -68,7 +68,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         Log.d(TAG,"Helooo");
         getLocationPermission();
-                  //  geoLocate();
+        //  geoLocate();
 
 
                /* public boolean onClick(TextView textView, int i, KeyEvent keyEvent) {
@@ -76,41 +76,40 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             ||keyEvent.getAction()==KeyEvent.KEYCODE_ENTER)
                     {
                         Log.d(TAG,"Trying to locate");
-
                     }
                     return false;
                 }
             });*/
-            hideKeyBoard();
+        hideKeyBoard();
     }
 
     public void findRestuarant(View v)
     {
 
-            try {
-                Log.d(TAG, "Reached safely");
-                StringBuilder stringBuilder = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
-                Log.d(TAG, "Reached safely AFTER LINK");
-                stringBuilder.append("location="+latLngcurrent+"," + latLngcurrent2);
-                Log.d(TAG, "Reached safely AFTER GPS");
-                stringBuilder.append("&radius=" + 1000);
-                Log.d(TAG, "Reached safely AFTER RADIUS");
-               stringBuilder.append("&types=" + "restaurant");
-                stringBuilder.append("&key="+ getResources().getString(R.string.google_aps_api));
-                String url = stringBuilder.toString();
-                Log.d(TAG,url);
-                Log.d(TAG, "Reached safely AFTER string builder");
-                Object datatransfer[] = new Object[2];
-                datatransfer[0] = mMap;
-                datatransfer[1] = url;
-                 nearByPlaces = new NearByPlaces();
-                nearByPlaces.execute(datatransfer);
-                Log.d(TAG, "Reached safely AFTER string builder last");
-            }
-            catch(SecurityException e)
-            {
-                Log.d(TAG,e.getMessage());
-            }
+        try {
+            Log.d(TAG, "Reached safely");
+            StringBuilder stringBuilder = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
+            Log.d(TAG, "Reached safely AFTER LINK");
+            stringBuilder.append("location="+latLngcurrent+"," + latLngcurrent2);
+            Log.d(TAG, "Reached safely AFTER GPS");
+            stringBuilder.append("&radius=" + 1000);
+            Log.d(TAG, "Reached safely AFTER RADIUS");
+            stringBuilder.append("&types=" + "restaurant");
+            stringBuilder.append("&key="+ getResources().getString(R.string.google_aps_api));
+            String url = stringBuilder.toString();
+            Log.d(TAG,url);
+            Log.d(TAG, "Reached safely AFTER string builder");
+            Object datatransfer[] = new Object[2];
+            datatransfer[0] = mMap;
+            datatransfer[1] = url;
+            nearByPlaces = new NearByPlaces();
+            nearByPlaces.execute(datatransfer);
+            Log.d(TAG, "Reached safely AFTER string builder last");
+        }
+        catch(SecurityException e)
+        {
+            Log.d(TAG,e.getMessage());
+        }
     }
     public void showlist(View v)
     {
@@ -122,26 +121,26 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     {
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
     }
-  /*  private void geoLocate()
-    {
-        //String searchString=editText1.getText().toString();
-        Geocoder geocoder=new Geocoder(MapsActivity.this);
-        List<Address> list=new ArrayList<>();
-        try
-        {
-            list=geocoder.getFromLocationName(searchString,5);
-            Log.d(TAG,"Found california");
-        }catch(IOException e)
-        {
-            Log.e(TAG,e.getMessage());
-        }
-        if(list.size()>0)
-        {
-            Address adress=list.get(0);
-            Log.d(TAG,"a locationnn" + adress.toString());
-            moveCamera(new LatLng(adress.getLatitude(),adress.getLongitude()),15f,adress.getAddressLine(0));
-        }
-    }*/
+    /*  private void geoLocate()
+      {
+          //String searchString=editText1.getText().toString();
+          Geocoder geocoder=new Geocoder(MapsActivity.this);
+          List<Address> list=new ArrayList<>();
+          try
+          {
+              list=geocoder.getFromLocationName(searchString,5);
+              Log.d(TAG,"Found california");
+          }catch(IOException e)
+          {
+              Log.e(TAG,e.getMessage());
+          }
+          if(list.size()>0)
+          {
+              Address adress=list.get(0);
+              Log.d(TAG,"a locationnn" + adress.toString());
+              moveCamera(new LatLng(adress.getLatitude(),adress.getLongitude()),15f,adress.getAddressLine(0));
+          }
+      }*/
     private void getLocationPermission() {
         String[] permissions = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
         if (ContextCompat.checkSelfPermission(getApplicationContext(), Fine_Location) == PackageManager.PERMISSION_GRANTED) {
@@ -195,7 +194,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         MarkerOptions options=new MarkerOptions()
                 .position(latlng)
                 .title(title);
-            mMap.addMarker(options);
+        mMap.addMarker(options);
         hideKeyBoard();
     }
 
